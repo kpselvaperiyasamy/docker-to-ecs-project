@@ -1,21 +1,21 @@
 # Docker to AWS ECS project
 ### Run application using docker on EC2 server
 ## Steps
-1. Create an EC2 server on the AWS Console (make sure you open port 80 in your security group)
-2. ssh into the server
-3. install git using the following command:
-    * sudo yum install git
-4. clone the code to the server
-5. install docker on the server using the following commands:
-    * sudo yum update
-    * sudo yum install docker -y
-    * sudo systemctl start docker
-    * sudo usermod -aG docker ec2-user
-    * exit (exit from server and ssh again)
-6. Create a private ECR repository on the AWS console with any name (like node-react-app)
-7. configure your AWS credentials using  the export commands or the aws configure command:
-    * export AWS_ACCESS_KEY_ID=your-access-key
-    * export AWS_SECRET_ACCESS_KEY=your-secret-key
+   1. Create an EC2 server on the AWS Console (make sure you open port 80 in your security group)
+   2. ssh into the server
+   3. install git using the following command:
+       * sudo yum install git
+   4. clone the code to the server
+   5. install docker on the server using the following commands:
+       * sudo yum update
+       * sudo yum install docker -y
+       * sudo systemctl start docker
+       * sudo usermod -aG docker ec2-user
+       * exit (exit from server and ssh again)
+   6. Create a private ECR repository on the AWS console with any name (like node-react-app)
+   7. configure your AWS credentials using  the export commands or the aws configure command:
+       * export AWS_ACCESS_KEY_ID=your-access-key
+       * export AWS_SECRET_ACCESS_KEY=your-secret-key
     * export AWS_DEFAULT_REGION=your-ecr-region
 8. go to the ecr repo and copy push commands from ecr and paste in the location where docker file exists for login, build, tagging and push the image to ecr (inside the repository you cloned)
 9. after running all commands, check the ecr repo and confirm the image exists
